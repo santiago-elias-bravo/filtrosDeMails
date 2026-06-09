@@ -17,6 +17,7 @@ Un correo electrónico posee la siguiente información:
 - Asunto
 - Tamaño en KB
 - Indicación de si posee o no archivos adjuntos
+- Cuerpo del correo
 
 El sistema debe permitir definir filtros sobre los correos.
 
@@ -58,9 +59,9 @@ Un filtro compuesto debe considerar que un correo cumple la condición únicamen
 
 ### Configuración de filtros
 
-Cada correo puede tener asociado un filtro activo.
+Cada cuenta de correo puede tener asociado un filtro activo.
 
-Al solicitar la evaluación del correo, éste deberá delegar la decisión al filtro configurado.
+Al solicitar la lista de correos electrónicos, se deberá aplicar el filtro configurado.
 
 ---
 
@@ -71,14 +72,15 @@ Dado el correo:
 - Asunto: `"Muy importante"`
 - Tamaño: `250 KB`
 - Posee adjunto: `Sí`
+- Cuerpo: `Reunión de consorcio para tratar problema con ascensor 1`
 
 Y el filtro compuesto:
 
 - Tiene adjunto.
 - Tamaño mayor o igual a `230 KB`.
-- El asunto contiene `"advertencia"`.
+- El asunto contiene `"importante"`.
 
-El resultado de la evaluación debe ser **falso**, ya que el asunto no contiene el texto requerido.
+El resultado de la lista de correos debe obtener el correo de ejemplo, ya que el asunto contiene el texto requerido.
 
 ---
 
@@ -93,3 +95,4 @@ Extender el modelo incorporando:
 - Filtros anidados (compuestos dentro de compuestos).
 
 El diseño debe permitir agregar nuevos filtros sin modificar los ya existentes.
+Plantear nuevos casos de prueba que verifiquen el funcionamiento correcto de al menos 1 desafío adicional
