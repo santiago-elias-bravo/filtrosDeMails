@@ -5,7 +5,7 @@ import ar.edu.unahur.obj2.composite.mail.Mail;
 public class Tamaño extends FiltroSimple{
     private Integer valorminimo;
 
-    public Tamaño(Integer valorminimo, Mail mail) {
+    public Tamaño(Mail mail, Integer valorminimo) {
         super(mail);
         this.valorminimo = valorminimo;
     }
